@@ -15,15 +15,23 @@ class Product extends Model
         'category_id',
         'image',
         'name',
+        'price_5kg', 
         'price_1kg',
         'price_half_kg',
+        'price_250g', 
+        'price_100g', 
+        'price_50g',
         'stock_in_grams',
         'is_active',
     ];
 
     protected $casts = [
+        'price_5kg' => 'decimal:2',
         'price_1kg' => 'decimal:2',
         'price_half_kg' => 'decimal:2',
+        'price_250g' => 'decimal:2',
+        'price_100g' => 'decimal:2',
+        'price_50g' => 'decimal:2',
         'stock_in_grams' => 'integer',
         'is_active' => 'boolean',
     ]; 

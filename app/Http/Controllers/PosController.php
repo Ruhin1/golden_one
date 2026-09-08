@@ -52,15 +52,29 @@ class PosController extends Controller
         ]);
     }
 
+
+    private function gramsForUnit(string $unitType): int
+    {
+        return match ($unitType) {
+            '5kg'  => 5000,
+            '1kg'  => 1000,
+            '500g' => 500,
+            '250g' => 250,
+            '100g' => 100,
+            '50g'  => 50,
+            default => throw new \InvalidArgumentException("অজানা ইউনিট-টাইপ: {$unitType}"),
+        };
+    }
+
     public function storeSale(Request $request)
     {
         $request->validate([
             'customer_id' => 'required|exists:customers,id',
             'items' => 'required|array|min:1',
             'items.*.product_id' => 'required|exists:products,id',
-            'items.*.unit_type' => 'required|in:1kg,half_kg',
+            'items.*.unit_type' => 'required|in:5kg,1kg,500g,250g,100g,50g', // ⬅️ ৬টা সাইজ
             'items.*.quantity' => 'required|integer|min:1',
-            'items.*.applied_price' => 'required|numeric|min:0',
+            'items.*.applied_price' => 'required|numeric|min:0', // ⬅️ এখন সরাসরি সেই প্যাকেটের চূড়ান্ত দাম — গুণ/ভাগ কিছুই না
             'paid_amount' => 'required|numeric|min:0',
             'sale_date' => 'nullable|date',
             'discount_type' => 'nullable|in:flat,percentage',
@@ -76,10 +90,14 @@ class PosController extends Controller
                 $cartItemsData = [];
 
                 foreach ($request->items as $item) {
-                    $product = Product::lockForUpdate()->findOrFail($item['product_id']); // ⬅️ lock যোগ করা হলো
-                    $is1kg = $item['unit_type'] === '1kg';
-                    $weightInGrams = ($is1kg ? 1000 : 500) * $item['quantity'];
+                    $product = Product::lockForUpdate()->findOrFail($item['product_id']);
 
+                    // ⬇️ আগে ছিল: ($is1kg ? 1000 : 500) * quantity — এখন জেনেরিক ম্যাপিং
+                    $weightInGrams = $this->gramsForUnit($item['unit_type']) * $item['quantity'];
+
+                    // applied_price এখন সরাসরি সেই প্যাকেটের (যেমন ১টা ২৫০গ্রাম প্যাকেট)
+                    // চূড়ান্ত দাম — quantity দিয়ে গুণ করলেই subtotal, এখানে কোনো
+                    // পরিবর্তন লাগেনি কারণ এই লজিকটা সবসময় এভাবেই ছিল
                     $appliedPrice = (float) $item['applied_price'];
                     $subtotal = $appliedPrice * $item['quantity'];
 
@@ -118,13 +136,13 @@ class PosController extends Controller
                     'discount_value' => $discountValue,
                     'discount_amount' => $discountAmount,
                     'net_amount' => $netAmount,
-                    'initial_paid_amount' => $initialPaid,     // ⬅️ নতুন — স্থির থাকবে
-                    'paid_amount' => $initialPaid,             // সাময়িক মান, recalculate() ঠিক করে দেবে
+                    'initial_paid_amount' => $initialPaid,
+                    'paid_amount' => $initialPaid,
                     'due_amount' => max(0, $netAmount - $initialPaid),
-                    'status' => 'due',                         // recalculate() ঠিক করে দেবে
+                    'status' => 'due',
                     'sale_date' => $request->filled('sale_date')
-                    ? \Carbon\Carbon::parse($request->sale_date)
-                    : now(),
+                        ? \Carbon\Carbon::parse($request->sale_date)
+                        : now(),
                 ]);
 
                 foreach ($cartItemsData as $data) {
@@ -141,7 +159,6 @@ class PosController extends Controller
                     $data['product']->decrement('stock_in_grams', $data['sold_weight_in_grams']);
                 }
 
-                // ⬇️ পুরনো "if ($dueAmount > 0) { Customer::increment... }" এর জায়গায়
                 app(CustomerLedgerService::class)->recalculate($request->customer_id);
 
                 $sale->refresh()->load('customer', 'items.product');
@@ -157,6 +174,105 @@ class PosController extends Controller
                 'success' => false,
                 'message' => $e->getMessage()
             ], 422);
+        }
+    }
+
+    public function updateSale(Request $request, $id)
+    {
+        $request->validate([
+            'customer_id'           => 'required|exists:customers,id',
+            'items'                 => 'required|array|min:1',
+            'items.*.product_id'    => 'required|exists:products,id',
+            'items.*.unit_type'     => 'required|in:5kg,1kg,500g,250g,100g,50g', // ⬅️ ৬টা সাইজ
+            'items.*.quantity'      => 'required|integer|min:1',
+            'items.*.applied_price' => 'required|numeric|min:0',
+            'discount_type'         => 'required|in:flat,percentage',
+            'discount_value'        => 'nullable|numeric|min:0',
+            'sale_date'              => 'nullable|date',
+        ]);
+
+        try {
+            return DB::transaction(function () use ($request, $id) {
+                $sale = Sale::with('items')->lockForUpdate()->findOrFail($id);
+                $oldCustomerId = $sale->customer_id;
+
+                // ১. পূর্বের স্টকে ফিরিয়ে নেওয়া
+                foreach ($sale->items as $item) {
+                    $product = Product::lockForUpdate()->find($item->product_id);
+                    if ($product) {
+                        $product->increment('stock_in_grams', $item->sold_weight_in_grams);
+                    }
+                }
+
+                // ২. পুরনো আইটেম মুছে ফেলা
+                $sale->items()->delete();
+
+                // ৩. নতুন হিসাব-নিকাশ ও আইটেম
+                $grossAmount = 0;
+                $itemsToInsert = [];
+
+                foreach ($request->items as $item) {
+                    // ⬇️ আগে ছিল: ($item['unit_type'] === '1kg') ? 1000 : 500 — এখন জেনেরিক ম্যাপিং
+                    $soldWeight = $this->gramsForUnit($item['unit_type']) * $item['quantity'];
+                    $subtotal = $item['applied_price'] * $item['quantity'];
+                    $grossAmount += $subtotal;
+
+                    $product = Product::lockForUpdate()->find($item['product_id']);
+
+                    if (!$product || $product->stock_in_grams < $soldWeight) {
+                        $productName = $product ? $product->name : 'পণ্য';
+                        $availableKg = $product ? ($product->stock_in_grams / 1000) : 0;
+                        throw new \Exception("{$productName} এর পর্যাপ্ত স্টক নেই! বর্তমানে মজুদ আছে: {$availableKg} কেজি");
+                    }
+
+                    $product->decrement('stock_in_grams', $soldWeight);
+
+                    $itemsToInsert[] = new SaleItem([
+                        'product_id'           => $item['product_id'],
+                        'unit_type'            => $item['unit_type'],
+                        'quantity'             => $item['quantity'],
+                        'sold_weight_in_grams' => $soldWeight,
+                        'applied_price'        => $item['applied_price'],
+                        'subtotal'             => $subtotal,
+                    ]);
+                }
+
+                $discountValue = (float) ($request->discount_value ?? 0);
+                $discountAmount = $request->discount_type === 'percentage'
+                    ? ($grossAmount * $discountValue) / 100
+                    : $discountValue;
+
+                $netAmount = max(0, $grossAmount - $discountAmount);
+
+                $sale->update([
+                    'customer_id'     => $request->customer_id,
+                    'gross_amount'    => $grossAmount,
+                    'discount_type'   => $request->discount_type,
+                    'discount_value'  => $discountValue,
+                    'discount_amount' => $discountAmount,
+                    'net_amount'      => $netAmount,
+                    'sale_date'       => $request->filled('sale_date')
+                        ? \Carbon\Carbon::parse($request->sale_date)
+                        : $sale->sale_date,
+                ]);
+
+                $sale->items()->saveMany($itemsToInsert);
+
+                app(CustomerLedgerService::class)->recalculate($request->customer_id);
+                if ($oldCustomerId && $oldCustomerId != $request->customer_id) {
+                    app(CustomerLedgerService::class)->recalculate($oldCustomerId);
+                }
+
+                return response()->json([
+                    'success' => true,
+                    'message' => 'বিক্রির তথ্য সফলভাবে আপডেট হয়েছে!'
+                ]);
+            });
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => $e->getMessage()
+            ], 400);
         }
     }
 
@@ -273,111 +389,6 @@ class PosController extends Controller
         }
     }
 
-    /**
-     * বিক্রি হালনাগাদ (Update) করা
-     */
-    public function updateSale(Request $request, $id)
-    {
-        $request->validate([
-            'customer_id'           => 'required|exists:customers,id',
-            'items'                 => 'required|array|min:1',
-            'items.*.product_id'    => 'required|exists:products,id',
-            'items.*.unit_type'     => 'required|in:1kg,half_kg',
-            'items.*.quantity'      => 'required|integer|min:1',
-            'items.*.applied_price' => 'required|numeric|min:0',
-            'discount_type'         => 'required|in:flat,percentage',
-            'discount_value'        => 'nullable|numeric|min:0',
-            'sale_date' => 'nullable|date',
-            // ⚠️ 'paid_amount' এখন আর নেওয়া হচ্ছে না — এটা সবসময় server-এ গণনা হয়
-        ]);
-
-        try {
-            return DB::transaction(function () use ($request, $id) {
-                $sale = Sale::with('items')->lockForUpdate()->findOrFail($id);
-                $oldCustomerId = $sale->customer_id;
-
-                // ১. পূর্বের স্টকে ফিরিয়ে নেওয়া
-                foreach ($sale->items as $item) {
-                    $product = Product::lockForUpdate()->find($item->product_id);
-                    if ($product) {
-                        $product->increment('stock_in_grams', $item->sold_weight_in_grams);
-                    }
-                }
-
-                // ২. পুরনো আইটেম মুছে ফেলা
-                $sale->items()->delete();
-
-                // ৩. নতুন হিসাব-নিকাশ ও আইটেম
-                $grossAmount = 0;
-                $itemsToInsert = [];
-
-                foreach ($request->items as $item) {
-                    $gramsPerUnit = ($item['unit_type'] === '1kg') ? 1000 : 500;
-                    $soldWeight = $gramsPerUnit * $item['quantity'];
-                    $subtotal = $item['applied_price'] * $item['quantity'];
-                    $grossAmount += $subtotal;
-
-                    $product = Product::lockForUpdate()->find($item['product_id']);
-
-                    if (!$product || $product->stock_in_grams < $soldWeight) {
-                        $productName = $product ? $product->name : 'পণ্য';
-                        $availableKg = $product ? ($product->stock_in_grams / 1000) : 0;
-                        throw new \Exception("{$productName} এর পর্যাপ্ত স্টক নেই! বর্তমানে মজুদ আছে: {$availableKg} কেজি");
-                    }
-
-                    $product->decrement('stock_in_grams', $soldWeight);
-
-                    $itemsToInsert[] = new SaleItem([
-                        'product_id'           => $item['product_id'],
-                        'unit_type'            => $item['unit_type'],
-                        'quantity'             => $item['quantity'],
-                        'sold_weight_in_grams' => $soldWeight,
-                        'applied_price'        => $item['applied_price'],
-                        'subtotal'             => $subtotal,
-                    ]);
-                }
-
-                $discountValue = (float) ($request->discount_value ?? 0);
-                $discountAmount = $request->discount_type === 'percentage'
-                    ? ($grossAmount * $discountValue) / 100
-                    : $discountValue;
-
-                $netAmount = max(0, $grossAmount - $discountAmount);
-
-                // ⚠️ লক্ষ্য করুন: paid_amount/due_amount/status এখানে বসানো হচ্ছে না।
-                // initial_paid_amount অপরিবর্তিত থাকে — বাকি সব CustomerLedgerService গণনা করবে।
-                $sale->update([
-                    'customer_id'     => $request->customer_id,
-                    'gross_amount'    => $grossAmount,
-                    'discount_type'   => $request->discount_type,
-                    'discount_value'  => $discountValue,
-                    'discount_amount' => $discountAmount, 
-                    'net_amount'      => $netAmount,
-                    'sale_date' => $request->filled('sale_date')
-                    ? \Carbon\Carbon::parse($request->sale_date)
-                    : $sale->sale_date, // ⬅️ না পাঠালে আগের তারিখই থাকবে
-                ]);
-
-                $sale->items()->saveMany($itemsToInsert);
-
-                // ৪. কাস্টমার বদলে গেলে দুই কাস্টমারেরই হিসাব রিক্যালকুলেট করতে হবে
-                app(CustomerLedgerService::class)->recalculate($request->customer_id);
-                if ($oldCustomerId && $oldCustomerId != $request->customer_id) {
-                    app(CustomerLedgerService::class)->recalculate($oldCustomerId);
-                }
-
-                return response()->json([
-                    'success' => true,
-                    'message' => 'বিক্রির তথ্য সফলভাবে আপডেট হয়েছে!'
-                ]);
-            });
-        } catch (\Exception $e) {
-            return response()->json([
-                'success' => false,
-                'message' => $e->getMessage()
-            ], 400);
-        }
-    }
 
     /**
      * বিক্রি ডিলিট করা (স্টক ফেরত ও কাস্টমার বকেয়া কমবে)

@@ -35,8 +35,12 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->string('image')->nullable();
             $table->string('name');
+            $table->decimal('price_5kg', 12, 2)->default(0.00);
             $table->decimal('price_1kg', 12, 2)->default(0.00);
             $table->decimal('price_half_kg', 12, 2)->default(0.00);
+            $table->decimal('price_250g', 12, 2)->default(0.00);
+            $table->decimal('price_100g', 12, 2)->default(0.00);
+            $table->decimal('price_50g', 12, 2)->default(0.00);
             $table->bigInteger('stock_in_grams')->default(0);
             $table->boolean('is_active')->default(true);
             $table->timestamps();
@@ -84,7 +88,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('sale_id')->constrained()->onDelete('cascade');
             $table->foreignId('product_id')->constrained();
-            $table->enum('unit_type', ['1kg', 'half_kg']);
+            $table->enum('unit_type', ['5kg','1kg','500g','250g','100g','50g']);
             $table->integer('quantity');
             $table->bigInteger('sold_weight_in_grams');
             $table->decimal('applied_price', 12, 2);
