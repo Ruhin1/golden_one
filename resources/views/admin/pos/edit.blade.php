@@ -133,22 +133,30 @@
                         <div>
                             <img :src="product.image ? '/storage/' + product.image : 'https://via.placeholder.com/150'" class="h-20 sm:h-24 w-full object-cover rounded-lg mb-2" loading="lazy">
                             <h4 class="font-bold text-gray-800 text-sm sm:text-md leading-tight" x-text="product.name"></h4>
-                            <div class="text-[11px] sm:text-xs text-gray-500 mt-1 pos-mono">
-                                ১কেজি: <span class="font-bold text-gray-700">৳<span x-text="product.price_1kg"></span></span> |
-                                ৫০০গ্রা: <span class="font-bold text-gray-700">৳<span x-text="product.price_half_kg"></span></span>
+
+                            <!-- ⬇️ এখন প্রোডাক্টে যেসব সাইজের দাম সেট করা আছে (>0), শুধু সেগুলোই দেখানো হয় -->
+                            <div class="flex flex-wrap gap-x-2 gap-y-0.5 text-[10px] sm:text-[11px] text-gray-500 mt-1 pos-mono">
+                                <template x-for="ut in availableUnits(product)" :key="'price-' + product.id + '-' + ut.key">
+                                    <span><span x-text="ut.shortLabel"></span>: <span class="font-bold text-gray-700">৳<span x-text="product[ut.priceField]"></span></span></span>
+                                </template>
                             </div>
                         </div>
 
-                        <!-- বাটন -->
-                        <div class="grid grid-cols-2 gap-1.5 mt-3">
-                            <button @click="addToCart(product, '1kg')" :disabled="remainingStock(product) < 1000"
-                                    class="text-white py-2 px-1 rounded-lg text-xs font-bold disabled:opacity-30 disabled:cursor-not-allowed active:scale-95 transition" style="background:var(--pos-primary)">
-                                + ১ কেজি
-                            </button>
-                            <button @click="addToCart(product, 'half_kg')" :disabled="remainingStock(product) < 500"
-                                    class="text-white py-2 px-1 rounded-lg text-xs font-bold disabled:opacity-30 disabled:cursor-not-allowed active:scale-95 transition" style="background:var(--pos-accent)">
-                                + ৫০০ গ্রাম
-                            </button>
+                        <!-- ⬇️ আগে শুধু ১কেজি/৫০০গ্রাম দুটো বাটন ছিল — এখন প্রোডাক্টে যে ৬টা
+                             সাইজের (৫কেজি, ১কেজি, ৫০০গ্রা, ২৫০গ্রা, ১০০গ্রা, ৫০গ্রা) দাম সেট আছে
+                             সেগুলোর জন্যই বাটন তৈরি হয়, এবং unit_type কী এখন ব্যাকএন্ডের
+                             updateSale ভ্যালিডেশনের (5kg,1kg,500g,250g,100g,50g) সাথে হুবহু মিলিয়ে পাঠানো হয় -->
+                        <div class="grid grid-cols-3 gap-1 mt-3">
+                            <template x-for="ut in availableUnits(product)" :key="'btn-' + product.id + '-' + ut.key">
+                                <button @click="addToCart(product, ut.key)" :disabled="remainingStock(product) < ut.grams"
+                                        class="text-white py-1.5 px-1 rounded-lg text-[10px] sm:text-[11px] font-bold disabled:opacity-30 disabled:cursor-not-allowed active:scale-95 transition"
+                                        :style="'background:' + (ut.grams >= 1000 ? 'var(--pos-primary)' : 'var(--pos-accent)')">
+                                    + <span x-text="ut.shortLabel"></span>
+                                </button>
+                            </template>
+                        </div>
+                        <div x-show="availableUnits(product).length === 0" class="text-[10px] text-gray-400 text-center mt-3 py-1.5">
+                            কোনো দাম সেট করা নেই
                         </div>
                     </div>
                 </template>
@@ -223,7 +231,7 @@
                         <template x-for="(item, index) in cart" :key="index">
                             <tr class="border-b bg-white">
                                 <td class="py-2 px-1 font-medium text-gray-800" x-text="item.product.name"></td>
-                                <td class="py-2 text-center text-xs text-gray-500" x-text="item.unit_type === '1kg' ? '১ কে' : '৫০০ গ্রা'"></td>
+                                <td class="py-2 text-center text-xs text-gray-500" x-text="unitLabel(item.unit_type)"></td>
                                 <td class="py-2 text-center">
                                     <div class="flex items-center justify-center space-x-1">
                                         <button @click="updateQty(index, -1)" class="w-6 h-6 bg-gray-200 rounded font-bold text-xs active:scale-90 transition">-</button>
@@ -366,6 +374,20 @@
             searchQuery: '',
             selectedCategory: null,
 
+            // ⬇️ নতুন — ৬টা প্যাকেট সাইজের কনফিগ, ব্যাকএন্ডের updateSale ভ্যালিডেশনের
+            // 'items.*.unit_type' => 'required|in:5kg,1kg,500g,250g,100g,50g' এর সাথে
+            // key হুবহু মিলে যায় (আগে এখানে 'half_kg' ব্যবহার হতো, যেটা ব্যাকএন্ডে
+            // কখনোই ভ্যালিড ছিল না — প্রতিটি আপডেটই এরর দিতো)। priceField প্রতিটা
+            // key-কে Product মডেলের সংশ্লিষ্ট দামের কলামের সাথে ম্যাপ করে।
+            unitTypes: [
+                { key: '5kg',  label: '৫ কেজি',    shortLabel: '৫কেজি',   grams: 5000, priceField: 'price_5kg' },
+                { key: '1kg',  label: '১ কেজি',    shortLabel: '১কেজি',   grams: 1000, priceField: 'price_1kg' },
+                { key: '500g', label: '৫০০ গ্রাম', shortLabel: '৫০০গ্রা', grams: 500,  priceField: 'price_half_kg' },
+                { key: '250g', label: '২৫০ গ্রাম', shortLabel: '২৫০গ্রা', grams: 250,  priceField: 'price_250g' },
+                { key: '100g', label: '১০০ গ্রাম', shortLabel: '১০০গ্রা', grams: 100,  priceField: 'price_100g' },
+                { key: '50g',  label: '৫০ গ্রাম',  shortLabel: '৫০গ্রা',  grams: 50,   priceField: 'price_50g' },
+            ],
+
             // পূর্বে সংরক্ষিত সেল ডাটা
             saleId: {{ $sale->id }},
             customerSearchText: '{{ $sale->customer ? addslashes($sale->customer->name . " (" . $sale->customer->phone . ")") : "" }}',
@@ -439,8 +461,30 @@
                 return Math.max(0, grams) + ' গ্রাম';
             },
 
+            // ── ইউনিট-টাইপ হেল্পার ──────────────────────────────────────
+            unitConfig(unitType) {
+                return this.unitTypes.find(u => u.key === unitType) || null;
+            },
+
             gramsForUnit(unitType) {
-                return unitType === '1kg' ? 1000 : 500;
+                const u = this.unitConfig(unitType);
+                return u ? u.grams : 0;
+            },
+
+            unitLabel(unitType) {
+                const u = this.unitConfig(unitType);
+                return u ? u.label : unitType;
+            },
+
+            // এই প্রোডাক্টে যে সাইজগুলোর দাম বসানো আছে (>0), শুধু সেগুলোই বাটন হিসেবে দেখানো হয়
+            availableUnits(product) {
+                return this.unitTypes.filter(u => parseFloat(product[u.priceField] || 0) > 0);
+            },
+
+            priceForUnit(product, unitType) {
+                const u = this.unitConfig(unitType);
+                if (!u) return 0;
+                return parseFloat(product[u.priceField] || 0);
             },
 
             // এই পণ্যটা কার্টে (যেকোনো ইউনিটে) মোট কত গ্রাম ইতিমধ্যে যোগ করা হয়েছে
@@ -465,7 +509,7 @@
                     return;
                 }
 
-                const defaultPrice = unitType === '1kg' ? product.price_1kg : product.price_half_kg;
+                const defaultPrice = this.priceForUnit(product, unitType);
                 const existingIndex = this.cart.findIndex(item => item.product.id === product.id && item.unit_type === unitType);
 
                 if (existingIndex > -1) {
@@ -474,14 +518,14 @@
                     this.cart.push({
                         product: product,
                         unit_type: unitType,
-                        applied_price: parseFloat(defaultPrice),
+                        applied_price: defaultPrice,
                         quantity: 1
                     });
                 }
 
                 // মোবাইলে পণ্য যোগ করার সাথে সাথে দ্রুত ফিডব্যাক
                 if (window.innerWidth < 992 && typeof toastr !== 'undefined') {
-                    toastr.success(product.name + ' কার্টে যোগ হয়েছে', '', { timeOut: 1000 });
+                    toastr.success(product.name + ' (' + this.unitLabel(unitType) + ') কার্টে যোগ হয়েছে', '', { timeOut: 1000 });
                 }
             },
 
@@ -656,13 +700,13 @@
                     customer_id: this.selectedCustomerId,
                     items: this.cart.map(item => ({
                         product_id: item.product.id,
-                        unit_type: item.unit_type,
+                        unit_type: item.unit_type, // ⬅️ এখন 5kg/1kg/500g/250g/100g/50g — ব্যাকএন্ডের এনামের সাথে হুবহু মিলে
                         quantity: item.quantity,
                         applied_price: item.applied_price
                     })),
                     discount_type: this.discountType,
                     discount_value: this.discountValue,
-                    sale_date: this.saleDate, // ⬅️ নতুন
+                    sale_date: this.saleDate,
                 };
 
                 this.isSubmitting = true;
