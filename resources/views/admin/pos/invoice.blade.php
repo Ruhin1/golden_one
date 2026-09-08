@@ -225,21 +225,21 @@
                     <td>{{ $index + 1 }}</td>
                     <td>
                         {{ $item->product->name ?? 'N/A' }}
+                        @php
+                            $weights = [
+                                '5kg'  => '(৫ কেজি)',
+                                '1kg'  => '(১ কেজি)',
+                                '500g' => '(৫০০ গ্রাম)',
+                                '250g' => '(২৫০ গ্রাম)',
+                                '100g' => '(১০০ গ্রাম)',
+                                '50g'  => '(৫০ গ্রাম)',
+                            ];
+                        @endphp
+
                         <span style="color:var(--pos-primary-dark); font-size:12px;">
-                            @if($item->unit_type === '5kg'){
-                                (5 কেজি)
-                            }@elseif ($item->unit_type === '1kg') {
-                                (১ কেজি)
-                            }@elseif ($item->unit_type === '500g') {
-                                (৫০০ গ্রাম)
-                            }@elseif ($item->unit_type === '250g') {
-                                (২৫০ গ্রাম)
-                            }@elseif ($item->unit_type === '100g') {
-                                (১০০ গ্রাম)
-                            }@elseif ($item->unit_type === '50g') {
-                                (৫০ গ্রাম)
-                            }
+                            {{ $weights[$item->unit_type] ?? '' }}
                         </span>
+
                     </td> 
                     <td class="center mono"‍>
                         {{ rtrim(rtrim(number_format($item->quantity * 0.5, 2, '.', ''), '0'), '.') }} কেজি
