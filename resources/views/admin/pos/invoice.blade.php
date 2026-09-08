@@ -212,10 +212,10 @@
             <thead>
                 <tr>
                     <th style="width:6%">ক্র.</th>
-                    <th style="width:37%">পণ্যের বিবরণ</th>
-                    <th class="center" style="width:10%">পরিমাণ</th>
-                    <th class="num" style="width:15%">একক মূল্য</th>
-                    <th class="num" style="width:15%">মোট</th>
+                    <th style="width:39%">পণ্যের বিবরণ</th>
+                    <th class="center" style="width:15%">পরিমাণ</th>
+                    <th class="num" style="width:20%">একক মূল্য</th>
+                    <th class="num" style="width:20%">মোট</th>
                 </tr>
             </thead>
             <tbody>
