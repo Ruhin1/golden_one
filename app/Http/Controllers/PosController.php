@@ -56,12 +56,12 @@ class PosController extends Controller
     private function gramsForUnit(string $unitType): int
     {
         return match ($unitType) {
-            '5kg'  => 5000,
+            '5kg'  => 1000,
             '1kg'  => 1000,
-            '500g' => 500,
-            '250g' => 250,
-            '100g' => 100,
-            '50g'  => 50,
+            '500g' => 1000,
+            '250g' => 1000,
+            '100g' => 1000,
+            '50g'  => 1000,
             default => throw new \InvalidArgumentException("অজানা ইউনিট-টাইপ: {$unitType}"),
         };
     }
