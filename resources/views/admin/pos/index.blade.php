@@ -202,7 +202,7 @@
                         <tr class="border-b text-[11px] sm:text-xs text-gray-500 uppercase">
                             <th class="pb-2">পণ্য</th>
                             <th class="pb-2 text-center">সাইজ</th>
-                            <th class="pb-2 text-center">পরিমাণ</th>
+                            <th class="pb-2 text-center">পরিমাণ (কেজি)</th>
                             <th class="pb-2 text-center">মূল্য (৳)</th>
                             <th class="pb-2 text-right">মোট</th>
                             <th class="pb-2"></th>
