@@ -1,0 +1,120 @@
+[17-Aug-2026 07:03:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php on line 14
+[17-Aug-2026 07:03:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php on line 14
+[17-Aug-2026 07:03:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php on line 6
+[17-Aug-2026 07:03:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php on line 14
+[17-Aug-2026 07:03:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php on line 14
+[17-Aug-2026 07:03:17 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php on line 6
+[17-Aug-2026 07:03:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php on line 14
+[17-Aug-2026 07:03:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php on line 14
+[17-Aug-2026 07:03:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php on line 6
+[17-Aug-2026 07:03:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php on line 14
+[17-Aug-2026 07:03:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php on line 14
+[17-Aug-2026 07:03:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php on line 6
+[17-Aug-2026 07:03:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php on line 14
+[17-Aug-2026 07:03:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php on line 14
+[17-Aug-2026 07:03:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php on line 6
+[17-Aug-2026 07:03:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php on line 14
+[17-Aug-2026 07:03:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php on line 14
+[17-Aug-2026 07:03:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php on line 6
+[17-Aug-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php on line 14
+[17-Aug-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php on line 6
+[17-Aug-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php on line 14
+[17-Aug-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php on line 14
+[17-Aug-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php on line 6
+[17-Aug-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php on line 14
+[17-Aug-2026 07:05:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php on line 14
+[17-Aug-2026 07:05:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php on line 6
+[17-Aug-2026 07:05:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php on line 14
+[17-Aug-2026 07:05:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/web.php on line 14
+[17-Aug-2026 07:05:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Artisan" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/console.php on line 6
+[17-Aug-2026 07:05:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Support\Facades\Route" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/routes/auth.php on line 14

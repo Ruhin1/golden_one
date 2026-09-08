@@ -1,0 +1,40 @@
+[17-Aug-2026 07:03:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php on line 7
+[17-Aug-2026 07:03:18 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php on line 7
+[17-Aug-2026 07:03:23 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php on line 7
+[17-Aug-2026 07:03:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php on line 7
+[17-Aug-2026 07:03:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php on line 7
+[17-Aug-2026 07:03:24 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php on line 7
+[17-Aug-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php on line 7
+[17-Aug-2026 07:05:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php on line 7
+[17-Aug-2026 07:05:04 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php on line 7
+[17-Aug-2026 07:05:05 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Testing\TestCase" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/tests/TestCase.php on line 7

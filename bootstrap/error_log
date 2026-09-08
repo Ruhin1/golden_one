@@ -1,0 +1,40 @@
+[17-Aug-2026 07:03:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php on line 7
+[17-Aug-2026 07:03:15 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php on line 7
+[17-Aug-2026 07:03:20 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php on line 7
+[17-Aug-2026 07:03:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php on line 7
+[17-Aug-2026 07:03:21 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php on line 7
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php on line 7
+[17-Aug-2026 07:05:00 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php on line 7
+[17-Aug-2026 07:05:00 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php on line 7
+[17-Aug-2026 07:05:01 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php on line 7
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Class "Illuminate\Foundation\Application" not found in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/bootstrap/app.php on line 7

@@ -1,0 +1,400 @@
+[17-Aug-2026 07:03:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php on line 21
+[17-Aug-2026 07:03:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php on line 16
+[17-Aug-2026 07:03:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php on line 19
+[17-Aug-2026 07:03:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php on line 18
+[17-Aug-2026 07:03:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php on line 21
+[17-Aug-2026 07:03:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php on line 20
+[17-Aug-2026 07:03:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php on line 16
+[17-Aug-2026 07:03:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php on line 19
+[17-Aug-2026 07:03:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php on line 16
+[17-Aug-2026 07:03:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php on line 18
+[17-Aug-2026 07:03:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php on line 21
+[17-Aug-2026 07:03:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php on line 17
+[17-Aug-2026 07:03:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php on line 20
+[17-Aug-2026 07:03:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php on line 16
+[17-Aug-2026 07:03:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php on line 18
+[17-Aug-2026 07:03:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php on line 16
+[17-Aug-2026 07:03:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php on line 21
+[17-Aug-2026 07:03:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php on line 17
+[17-Aug-2026 07:03:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php on line 16
+[17-Aug-2026 07:03:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php on line 18
+[17-Aug-2026 07:03:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php on line 16
+[17-Aug-2026 07:03:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php on line 19
+[17-Aug-2026 07:03:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php on line 18
+[17-Aug-2026 07:03:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php on line 20
+[17-Aug-2026 07:03:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php on line 16
+[17-Aug-2026 07:03:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php on line 21
+[17-Aug-2026 07:03:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php on line 16
+[17-Aug-2026 07:03:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php on line 17
+[17-Aug-2026 07:03:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php on line 21
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php on line 16
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php on line 19
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php on line 19
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php on line 20
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php on line 16
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php on line 18
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php on line 18
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php on line 21
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php on line 16
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php on line 17
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php on line 19
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php on line 20
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php on line 16
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php on line 21
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php on line 17
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php on line 21
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php on line 16
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php on line 21
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php on line 18
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php on line 20
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php on line 16
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php on line 18
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php on line 21
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php on line 16
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php on line 17
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php on line 16
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php on line 18
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php on line 18
+[17-Aug-2026 07:03:22 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php on line 21
+[17-Aug-2026 07:03:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php on line 16
+[17-Aug-2026 07:03:23 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php on line 18
+[17-Aug-2026 07:05:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php on line 19
+[17-Aug-2026 07:05:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php on line 16
+[17-Aug-2026 07:05:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php on line 18
+[17-Aug-2026 07:05:00 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php on line 20
+[17-Aug-2026 07:05:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php on line 16
+[17-Aug-2026 07:05:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php on line 21
+[17-Aug-2026 07:05:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php on line 19
+[17-Aug-2026 07:05:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php on line 16
+[17-Aug-2026 07:05:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php on line 17
+[17-Aug-2026 07:05:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php on line 16
+[17-Aug-2026 07:05:01 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php on line 18
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php on line 16
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php on line 20
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php on line 16
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php on line 19
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php on line 21
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php on line 21
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php on line 16
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php on line 20
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php on line 16
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php on line 21
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php:19
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/auth.php on line 19
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php on line 17
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php on line 18
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php on line 18
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php on line 21
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/database.php on line 20
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/filesystems.php on line 16
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/logging.php on line 21
+[17-Aug-2026 07:05:02 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php on line 18
+[17-Aug-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/cache.php on line 18
+[17-Aug-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php on line 17
+[17-Aug-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php on line 21
+[17-Aug-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php on line 16
+[17-Aug-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php on line 18
+[17-Aug-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/app.php on line 16
+[17-Aug-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php:17
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/mail.php on line 17
+[17-Aug-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/session.php on line 21
+[17-Aug-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/queue.php on line 16
+[17-Aug-2026 07:05:03 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/gffoodandbeverag/public_html/juha-food.gffoodandbeverage.com/config/services.php on line 18
