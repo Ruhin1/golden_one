@@ -226,7 +226,19 @@
                     <td>
                         {{ $item->product->name ?? 'N/A' }}
                         <span style="color:var(--pos-primary-dark); font-size:12px;">
-                            ({{ $item->unit_type === '1kg' ? '১ কেজি' : '৫০০ গ্রাম' }})
+                            @if($item->unit_type === '5kg'){
+                                (5 কেজি)
+                            }@elseif ($item->unit_type === '1kg') {
+                                (১ কেজি)
+                            }@elseif ($item->unit_type === '500g') {
+                                (৫০০ গ্রাম)
+                            }@elseif ($item->unit_type === '250g') {
+                                (২৫০ গ্রাম)
+                            }@elseif ($item->unit_type === '100g') {
+                                (১০০ গ্রাম)
+                            }@elseif ($item->unit_type === '50g') {
+                                (৫০ গ্রাম)
+                            }
                         </span>
                     </td> 
                     <td class="center mono"‍>
