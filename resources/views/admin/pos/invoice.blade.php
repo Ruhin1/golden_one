@@ -213,7 +213,6 @@
                 <tr>
                     <th style="width:6%">ক্র.</th>
                     <th style="width:37%">পণ্যের বিবরণ</th>
-                    <th style="width:17%">একক কেজি</th>
                     <th class="center" style="width:10%">পরিমাণ</th>
                     <th class="num" style="width:15%">একক মূল্য</th>
                     <th class="num" style="width:15%">মোট</th>
@@ -241,9 +240,6 @@
                         </span>
 
                     </td> 
-                    <td class="center mono"‍>
-                        {{ rtrim(rtrim(number_format($item->quantity * 0.5, 2, '.', ''), '0'), '.') }} কেজি
-                    </td>
                     <td class="center mono">{{ $item->quantity }}</td>
                     <td class="num mono">{{ $settings->currency_symbol ?? '৳' }}{{ number_format($item->applied_price, 2) }}</td>
                     <td class="num mono">{{ $settings->currency_symbol ?? '৳' }}{{ number_format($item->subtotal, 2) }}</td>
