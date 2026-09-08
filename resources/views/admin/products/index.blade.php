@@ -27,8 +27,7 @@
                             <th width="5%">#</th>
                             <th width="8%">ছবি</th>
                             <th>পণ্যের নাম ও ক্যাটাগরি</th>
-                            <th>১ কেজি মূল্য</th>
-                            <th>৫০ গ্রাম মূল্য</th>
+                            <th>মূল্য তালিকা (প্যাকেট সাইজ অনুযায়ী)</th>
                             <th>মোট স্টক</th>
                             <th width="8%">স্ট্যাটাস</th>
                             <th width="18%" class="text-center">অ্যাকশন</th>
@@ -73,16 +72,48 @@
                             <span class="text-danger small error-text" id="error_name"></span>
                         </div>
 
-                        <div class="col-12 col-md-6">
-                            <label class="form-label fw-bold">১ কেজি মূল্য (৳) <span class="text-danger">*</span></label>
-                            <input type="number" step="0.01" class="form-control form-control-lg fs-6" id="price_1kg" name="price_1kg" placeholder="0.00" required>
+                        <!-- ⬇️ প্যাকেট সাইজ ভিত্তিক মূল্য — ৬টা সাইজ। ১কেজি ও ৫০০গ্রাম আবশ্যক
+                             (পুরনো ডাটার সাথে সামঞ্জস্য রাখতে), বাকি ৪টা ঐচ্ছিক — ফাঁকা রাখলে
+                             POS পেজে সেই সাইজের বাটন দেখাবে না -->
+                        <div class="col-12">
+                            <label class="form-label fw-bold d-block mb-1">প্যাকেট সাইজ অনুযায়ী মূল্য (৳)</label>
+                            <small class="text-muted d-block mb-2">যে সাইজে পণ্যটি বিক্রি হবে না, সেই ঘর খালি রাখুন — POS পেজে শুধু মূল্য দেওয়া সাইজগুলোই দেখানো হবে।</small>
+                        </div>
+
+                        <div class="col-6 col-md-4">
+                            <label class="form-label fw-bold">৫ কেজি মূল্য</label>
+                            <input type="number" step="0.01" min="0" class="form-control form-control-lg fs-6" id="price_5kg" name="price_5kg" placeholder="0.00">
+                            <span class="text-danger small error-text" id="error_price_5kg"></span>
+                        </div>
+
+                        <div class="col-6 col-md-4">
+                            <label class="form-label fw-bold">১ কেজি মূল্য <span class="text-danger">*</span></label>
+                            <input type="number" step="0.01" min="0" class="form-control form-control-lg fs-6" id="price_1kg" name="price_1kg" placeholder="0.00" required>
                             <span class="text-danger small error-text" id="error_price_1kg"></span>
                         </div>
 
-                        <div class="col-12 col-md-6">
-                            <label class="form-label fw-bold">৫০০ গ্রাম মূল্য (৳) <span class="text-danger">*</span></label>
-                            <input type="number" step="0.01" class="form-control form-control-lg fs-6" id="price_half_kg" name="price_half_kg" placeholder="0.00" required>
+                        <div class="col-6 col-md-4">
+                            <label class="form-label fw-bold">৫০০ গ্রাম মূল্য <span class="text-danger">*</span></label>
+                            <input type="number" step="0.01" min="0" class="form-control form-control-lg fs-6" id="price_half_kg" name="price_half_kg" placeholder="0.00" required>
                             <span class="text-danger small error-text" id="error_price_half_kg"></span>
+                        </div>
+
+                        <div class="col-6 col-md-4">
+                            <label class="form-label fw-bold">২৫০ গ্রাম মূল্য</label>
+                            <input type="number" step="0.01" min="0" class="form-control form-control-lg fs-6" id="price_250g" name="price_250g" placeholder="0.00">
+                            <span class="text-danger small error-text" id="error_price_250g"></span>
+                        </div>
+
+                        <div class="col-6 col-md-4">
+                            <label class="form-label fw-bold">১০০ গ্রাম মূল্য</label>
+                            <input type="number" step="0.01" min="0" class="form-control form-control-lg fs-6" id="price_100g" name="price_100g" placeholder="0.00">
+                            <span class="text-danger small error-text" id="error_price_100g"></span>
+                        </div>
+
+                        <div class="col-6 col-md-4">
+                            <label class="form-label fw-bold">৫০ গ্রাম মূল্য</label>
+                            <input type="number" step="0.01" min="0" class="form-control form-control-lg fs-6" id="price_50g" name="price_50g" placeholder="0.00">
+                            <span class="text-danger small error-text" id="error_price_50g"></span>
                         </div>
 
                         <!-- Initial Stock Inputs (Visible only when creating new product) -->
@@ -229,6 +260,18 @@
 @push('js')
 <script>
     $(document).ready(function () {
+
+        // ⬇️ নতুন — ৬টা প্যাকেট সাইজের কনফিগ, প্রোডাক্ট মডেলের কলাম ও লেবেলের ম্যাপিং।
+        // টেবিলের "মূল্য তালিকা" কলাম ও ফর্মের ভ্যালু-ফিল করা — দুই জায়গাতেই ব্যবহার হবে।
+        const PRICE_FIELDS = [
+            { field: 'price_5kg',     label: '৫কেজি',   badge: 'bg-dark' },
+            { field: 'price_1kg',     label: '১কেজি',   badge: 'bg-success' },
+            { field: 'price_half_kg', label: '৫০০গ্রা', badge: 'bg-info text-dark' },
+            { field: 'price_250g',    label: '২৫০গ্রা', badge: 'bg-warning text-dark' },
+            { field: 'price_100g',    label: '১০০গ্রা', badge: 'bg-secondary' },
+            { field: 'price_50g',     label: '৫০গ্রা',  badge: 'bg-primary' },
+        ];
+
         let table = $('#productTable').DataTable({
             processing: true,
             serverSide: false,
@@ -256,12 +299,17 @@
                     }
                 },
                 {
-                    data: 'price_1kg',
-                    render: (data) => `<span class="fw-bold text-success">৳${parseFloat(data).toFixed(2)}</span>`
-                },
-                {
-                    data: 'price_half_kg',
-                    render: (data) => `<span class="fw-bold text-info">৳${parseFloat(data).toFixed(2)}</span>`
+                    // ⬇️ আগে এখানে দুটো আলাদা কলাম ছিল (১কেজি / "৫০ গ্রাম" — যেটা আসলে
+                    // ভুল লেবেল ছিল, কারণ price_half_kg মানে ৫০০ গ্রাম, ৫০ গ্রাম না)।
+                    // এখন যে সাইজেরই দাম সেট করা আছে (>0), সবগুলো একসাথে চিপ আকারে দেখায়।
+                    data: null,
+                    render: function (data, type, row) {
+                        let chips = PRICE_FIELDS
+                            .filter(p => parseFloat(row[p.field] || 0) > 0)
+                            .map(p => `<span class="badge ${p.badge} me-1 mb-1">${p.label}: ৳${parseFloat(row[p.field]).toFixed(2)}</span>`)
+                            .join('');
+                        return chips || '<span class="text-muted small">কোনো দাম সেট নেই</span>';
+                    }
                 },
                 {
                     data: 'stock_in_grams',
@@ -350,7 +398,7 @@
             $('#productModal').modal('show');
         });
 
-        // ক্রিয়েট এবং এডিট ফর্ম সাবমিট
+        // ক্রিয়েট এবং এডিট ফর্ম সাবমিট
         $('#productForm').submit(function (e) {
             e.preventDefault();
             $('.error-text').text('');
@@ -399,8 +447,14 @@
                 $('#product_id').val(data.id);
                 $('#category_id').val(data.category_id);
                 $('#name').val(data.name);
-                $('#price_1kg').val(data.price_1kg);
-                $('#price_half_kg').val(data.price_half_kg);
+
+                // ⬇️ ৬টা সাইজের দামই ফর্মে ভরে দেওয়া হচ্ছে (null/undefined হলে ফাঁকা থাকবে)
+                $('#price_5kg').val(data.price_5kg ?? '');
+                $('#price_1kg').val(data.price_1kg ?? '');
+                $('#price_half_kg').val(data.price_half_kg ?? '');
+                $('#price_250g').val(data.price_250g ?? '');
+                $('#price_100g').val(data.price_100g ?? '');
+                $('#price_50g').val(data.price_50g ?? '');
 
                 if (data.image_url) {
                     $('#imagePreview').attr('src', data.image_url);

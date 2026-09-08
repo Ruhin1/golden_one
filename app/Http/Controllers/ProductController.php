@@ -29,6 +29,13 @@ class ProductController extends Controller
             'name'          => 'required|string|max:255',
             'price_1kg'     => 'required|numeric|min:0',
             'price_half_kg' => 'required|numeric|min:0',
+            // ⬇️ নতুন — ৫কেজি/২৫০গ্রাম/১০০গ্রাম/৫০গ্রাম সাইজের দাম ঐচ্ছিক, কারণ প্রতিটা
+            // পণ্য সব সাইজে বিক্রি নাও হতে পারে (POS পেজে যে সাইজের দাম >0 সেটার
+            // বাটনই দেখানো হয়)
+            'price_5kg'     => 'nullable|numeric|min:0',
+            'price_250g'    => 'nullable|numeric|min:0',
+            'price_100g'    => 'nullable|numeric|min:0',
+            'price_50g'     => 'nullable|numeric|min:0',
             'stock_kg'      => 'nullable|numeric|min:0',
             'stock_gram'    => 'nullable|numeric|min:0|max:999',
             'image'         => 'nullable|image|mimes:jpeg,jpg,png,webp|max:2048',
@@ -49,8 +56,12 @@ class ProductController extends Controller
             $product = Product::create([
                 'category_id'    => $request->category_id,
                 'name'           => $request->name,
+                'price_5kg'      => $request->price_5kg,
                 'price_1kg'      => $request->price_1kg,
                 'price_half_kg'  => $request->price_half_kg,
+                'price_250g'     => $request->price_250g,
+                'price_100g'     => $request->price_100g,
+                'price_50g'      => $request->price_50g,
                 'stock_in_grams' => $stockInGrams,
                 'image'          => $imagePath,
                 'is_active'      => $request->has('is_active') ? 1 : 0,
@@ -95,6 +106,11 @@ class ProductController extends Controller
             'name'          => 'required|string|max:255',
             'price_1kg'     => 'required|numeric|min:0',
             'price_half_kg' => 'required|numeric|min:0',
+            // ⬇️ নতুন — বাকি ৪টা সাইজের দাম
+            'price_5kg'     => 'nullable|numeric|min:0',
+            'price_250g'    => 'nullable|numeric|min:0',
+            'price_100g'    => 'nullable|numeric|min:0',
+            'price_50g'     => 'nullable|numeric|min:0',
             'image'         => 'nullable|image|mimes:jpeg,jpg,png,webp|max:2048',
             'is_active'     => 'nullable|boolean',
         ]);
@@ -110,8 +126,12 @@ class ProductController extends Controller
         $product->update([
             'category_id'   => $request->category_id,
             'name'          => $request->name,
+            'price_5kg'     => $request->price_5kg,
             'price_1kg'     => $request->price_1kg,
             'price_half_kg' => $request->price_half_kg,
+            'price_250g'    => $request->price_250g,
+            'price_100g'    => $request->price_100g,
+            'price_50g'     => $request->price_50g,
             'image'         => $imagePath,
             'is_active'     => $request->has('is_active') ? 1 : 0,
         ]);
