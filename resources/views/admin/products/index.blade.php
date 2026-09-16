@@ -276,6 +276,7 @@
             { field: 'price_250g',    label: '২৫০গ্রা', badge: 'bg-warning text-dark' },
             { field: 'price_100g',    label: '১০০গ্রা', badge: 'bg-secondary' },
             { field: 'price_50g',     label: '৫০গ্রা',  badge: 'bg-primary' },
+            { field: 'price_khula',   label: 'খোলা',    badge: 'bg-danger' },
         ];
 
         let table = $('#productTable').DataTable({
