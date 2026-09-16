@@ -27,15 +27,13 @@ class ProductController extends Controller
         $request->validate([
             'category_id'   => 'required|exists:categories,id',
             'name'          => 'required|string|max:255',
-            'price_1kg'     => 'required|numeric|min:0',
-            'price_half_kg' => 'required|numeric|min:0',
-            // ⬇️ নতুন — ৫কেজি/২৫০গ্রাম/১০০গ্রাম/৫০গ্রাম সাইজের দাম ঐচ্ছিক, কারণ প্রতিটা
-            // পণ্য সব সাইজে বিক্রি নাও হতে পারে (POS পেজে যে সাইজের দাম >0 সেটার
-            // বাটনই দেখানো হয়)
+            'price_1kg'     => 'nullable|numeric|min:0',
+            'price_half_kg' => 'nullable|numeric|min:0',
             'price_5kg'     => 'nullable|numeric|min:0',
             'price_250g'    => 'nullable|numeric|min:0',
             'price_100g'    => 'nullable|numeric|min:0',
             'price_50g'     => 'nullable|numeric|min:0',
+            'price_khula'   => 'nullable|numeric|min:0',
             'stock_kg'      => 'nullable|numeric|min:0',
             'stock_gram'    => 'nullable|numeric|min:0|max:999',
             'image'         => 'nullable|image|mimes:jpeg,jpg,png,webp|max:2048',
@@ -62,6 +60,7 @@ class ProductController extends Controller
                 'price_250g'     => $request->price_250g,
                 'price_100g'     => $request->price_100g,
                 'price_50g'      => $request->price_50g,
+                'price_khula'    => $request->price_khula,
                 'stock_in_grams' => $stockInGrams,
                 'image'          => $imagePath,
                 'is_active'      => $request->has('is_active') ? 1 : 0,

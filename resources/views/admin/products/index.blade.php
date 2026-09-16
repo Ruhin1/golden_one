@@ -116,6 +116,12 @@
                             <span class="text-danger small error-text" id="error_price_50g"></span>
                         </div>
 
+                        <div class="col-6 col-md-4">
+                            <label class="form-label fw-bold">খোলা পণ্য মূল্য</label>
+                            <input type="number" step="0.01" min="0" class="form-control form-control-lg fs-6" id="price_khula" name="price_khula" placeholder="0.00">
+                            <span class="text-danger small error-text" id="error_price_khula"></span>
+                        </div>
+
                         <!-- Initial Stock Inputs (Visible only when creating new product) -->
                         <div class="col-6 col-md-3 initial-stock-field">
                             <label class="form-label fw-bold">প্রাথমিক স্টক (কেজি)</label>
