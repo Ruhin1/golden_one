@@ -89,7 +89,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('sale_id')->constrained()->onDelete('cascade');
             $table->foreignId('product_id')->constrained();
-            $table->enum('unit_type', ['5kg','1kg','500g','250g','100g','50g']);
+            $table->enum('unit_type', ['5kg','1kg','500g','250g','100g','50g','khula']);
             $table->integer('quantity');
             $table->bigInteger('sold_weight_in_grams');
             $table->decimal('applied_price', 12, 2);

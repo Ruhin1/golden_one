@@ -232,10 +232,11 @@
                                 '250g' => '(২৫০ গ্রাম)',
                                 '100g' => '(১০০ গ্রাম)',
                                 '50g'  => '(৫০ গ্রাম)',
+                                'khula' => '(খোলা)'
                             ];
                         @endphp
 
-                        <span style="color:var(--pos-primary-dark); font-size:12px;">
+                        <span style="color:var(--pos-primary-dark); font-size:12px; font-family:Arial, Helvetica, sans-serif;">
                             {{ $weights[$item->unit_type] ?? '' }}
                         </span>
 
