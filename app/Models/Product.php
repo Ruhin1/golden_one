@@ -21,6 +21,7 @@ class Product extends Model
         'price_250g', 
         'price_100g', 
         'price_50g',
+        'price_khula',
         'stock_in_grams',
         'is_active',
     ];
