@@ -444,6 +444,7 @@
                 { key: '250g', label: '২৫০ গ্রাম', shortLabel: '২৫০গ্রা', grams: 250,  priceField: 'price_250g' },
                 { key: '100g', label: '১০০ গ্রাম', shortLabel: '১০০গ্রা', grams: 100,  priceField: 'price_100g' },
                 { key: '50g',  label: '৫০ গ্রাম',  shortLabel: '৫০গ্রা',  grams: 50,   priceField: 'price_50g' },
+                { key: 'khula', label: 'খোলা',shortLabel: 'খোলা',   grams: 1000, priceField: 'price_khula' },
             ],
 
             cart: [],

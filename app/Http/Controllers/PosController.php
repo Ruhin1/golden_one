@@ -72,7 +72,7 @@ class PosController extends Controller
             'customer_id' => 'required|exists:customers,id',
             'items' => 'required|array|min:1',
             'items.*.product_id' => 'required|exists:products,id',
-            'items.*.unit_type' => 'required|in:5kg,1kg,500g,250g,100g,50g', // ⬅️ ৬টা সাইজ
+            'items.*.unit_type' => 'required|in:5kg,1kg,500g,250g,100g,50g,khula',
             'items.*.quantity' => 'required|integer|min:1',
             'items.*.applied_price' => 'required|numeric|min:0', // ⬅️ এখন সরাসরি সেই প্যাকেটের চূড়ান্ত দাম — গুণ/ভাগ কিছুই না
             'paid_amount' => 'required|numeric|min:0',
