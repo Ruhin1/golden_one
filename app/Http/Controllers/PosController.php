@@ -62,6 +62,7 @@ class PosController extends Controller
             '250g' => 1000,
             '100g' => 1000,
             '50g'  => 1000,
+            'khula' => 1000,
             default => throw new \InvalidArgumentException("অজানা ইউনিট-টাইপ: {$unitType}"),
         };
     }
@@ -183,7 +184,7 @@ class PosController extends Controller
             'customer_id'           => 'required|exists:customers,id',
             'items'                 => 'required|array|min:1',
             'items.*.product_id'    => 'required|exists:products,id',
-            'items.*.unit_type'     => 'required|in:5kg,1kg,500g,250g,100g,50g', // ⬅️ ৬টা সাইজ
+            'items.*.unit_type' => 'required|in:5kg,1kg,500g,250g,100g,50g,khula',
             'items.*.quantity'      => 'required|integer|min:1',
             'items.*.applied_price' => 'required|numeric|min:0',
             'discount_type'         => 'required|in:flat,percentage',

@@ -33,6 +33,7 @@ class Product extends Model
         'price_250g' => 'decimal:2',
         'price_100g' => 'decimal:2',
         'price_50g' => 'decimal:2',
+        'price_khula' => 'decimal:2',
         'stock_in_grams' => 'integer',
         'is_active' => 'boolean',
     ]; 
