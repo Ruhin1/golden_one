@@ -461,6 +461,7 @@
                 $('#price_250g').val(data.price_250g ?? '');
                 $('#price_100g').val(data.price_100g ?? '');
                 $('#price_50g').val(data.price_50g ?? '');
+                $('#price_khula').val(data.price_khula ?? '');
 
                 if (data.image_url) {
                     $('#imagePreview').attr('src', data.image_url);
