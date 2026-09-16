@@ -41,6 +41,7 @@ return new class extends Migration
             $table->decimal('price_250g', 12, 2)->default(0.00);
             $table->decimal('price_100g', 12, 2)->default(0.00);
             $table->decimal('price_50g', 12, 2)->default(0.00);
+            $table->decimal('price_khula', 12, 2)->default(0.00);
             $table->bigInteger('stock_in_grams')->default(0);
             $table->boolean('is_active')->default(true);
             $table->timestamps();
