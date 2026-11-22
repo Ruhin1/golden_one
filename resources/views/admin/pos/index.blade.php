@@ -862,7 +862,7 @@
             async getallpaymentserivceprovidersnames() {
                 try{
 
-                    const response = await fetch("{{ route('admin.payment-service-providers.names') }}", {
+                    const response = await fetch("{{ route('payment-service-providers.names') }}", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
