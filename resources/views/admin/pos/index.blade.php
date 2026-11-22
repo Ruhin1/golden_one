@@ -472,6 +472,7 @@
 
             init() {
                 this.saleDate = this.formatDatetimeLocal(new Date());
+                this.getallpaymentserivceprovidersnames(); 
             },
 
             // ================================================================
