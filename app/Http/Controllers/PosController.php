@@ -130,6 +130,7 @@ class PosController extends Controller
                 $initialPaid = min($netAmount, (float) $request->paid_amount);
 
                 $sale = Sale::create([
+                    'invoice_no' => 'TMP-' . uniqid(),
                     'customer_id' => $request->customer_id,
                     'user_id' => auth()->id(),
                     'gross_amount' => $grossAmount,
