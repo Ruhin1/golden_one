@@ -198,8 +198,21 @@
 
             <div class="mb-3">
                 <label class="block text-xs font-bold text-gray-600 mb-1">পেমেন্ট সার্বিস সিলেক্ট করুন</label>
-                <div class="border-gray-200 rounded-lg" style="--tw-ring-color:var(--pos-primary)" id="all-payment-service">
-                    
+                <div class="flex flex-wrap gap-1.5" id="all-payment-service">
+                    <template x-for="(id, name) in paymentServiceProviders" :key="id">
+                        <button type="button"
+                                @click="selectedPaymentService = name"
+                                :class="selectedPaymentService === name
+                                    ? 'text-white shadow-sm'
+                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'"
+                                :style="selectedPaymentService === name ? 'background:var(--pos-primary)' : ''"
+                                class="px-3 py-1.5 rounded-full font-semibold text-xs transition active:scale-95"
+                                x-text="name">
+                        </button>
+                    </template>
+                    <template x-if="Object.keys(paymentServiceProviders).length === 0">
+                        <span class="text-xs text-gray-400 italic">লোড হচ্ছে...</span>
+                    </template>
                 </div>
             </div>
 
@@ -438,6 +451,8 @@
             selectedCustomer: null,
             selectedCustomerId: null,
             saleDate: '',
+            selectedPaymentService: null,      // ← সিলেক্ট করা পেমেন্ট সার্ভিসের নাম
+            paymentServiceProviders: {},       // ← API থেকে আসা {name: id} অবজেক্ট
 
             // ⬇️ নতুন — ৬টা প্যাকেট সাইজের কনফিগ, ব্যাকএন্ডের storeSale ভ্যালিডেশনের
             // 'items.*.unit_type' => 'required|in:5kg,1kg,500g,250g,100g,50g' এর সাথে
@@ -872,10 +887,11 @@
                     });
 
                     const result = await response.json();
+                    this.paymentServiceProviders = result;   // ← state-এ সেভ
                     console.log('Payment Service Providers:', result);
 
                 } catch (e) {
-                    console.error(e);   // ← ডিবাগিং সহজ হবে
+                    console.error(e);
                     Swal.fire({
                         icon: 'error',
                         title: 'সার্ভার এরর!',
