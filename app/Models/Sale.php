@@ -15,7 +15,7 @@ protected $fillable = [
     'invoice_no', 'customer_id', 'user_id', 'gross_amount',
     'discount_type', 'discount_value', 'discount_amount', 'net_amount',
     'initial_paid_amount', // ⬅️ নতুন
-    'paid_amount', 'due_amount', 'status', 'sale_date',
+    'paid_amount', 'due_amount', 'status', 'sale_date', 'payment_service',
 ];
 
 protected $casts = [

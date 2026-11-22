@@ -80,6 +80,7 @@ class PosController extends Controller
             'sale_date' => 'nullable|date',
             'discount_type' => 'nullable|in:flat,percentage',
             'discount_value' => 'nullable|numeric|min:0',
+            'payment_service' => 'nullable|string|max:255',
         ], [
             'customer_id.required' => 'অনুগ্ৰহ করে একজন কাস্টমার নির্বাচন করুন।',
             'customer_id.exists' => 'নির্বাচিত কাস্টমারটি সঠিক নয়।',
@@ -144,6 +145,7 @@ class PosController extends Controller
                     'sale_date' => $request->filled('sale_date')
                         ? \Carbon\Carbon::parse($request->sale_date)
                         : now(),
+                    'payment_service' => $request->payment_service ?? null,
                 ]);
 
                 foreach ($cartItemsData as $data) {

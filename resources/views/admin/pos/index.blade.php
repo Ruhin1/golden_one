@@ -822,6 +822,7 @@
                     discount_value: this.discountValue,
                     paid_amount: this.paidAmount,
                     sale_date: this.saleDate,
+                    payment_service: this.selectedPaymentService,   // ← এখানে name যাবে
                 };
 
                 this.isSubmitting = true;
@@ -844,6 +845,7 @@
                         this.cart = [];
                         this.discountValue = 0;
                         this.paidAmount = 0;
+                        this.selectedPaymentService = null;   // ← রিসেট
                         this.resetCustomer();
                         this.saleDate = this.formatDatetimeLocal(new Date());
                         this.showSaleSuccessModal = true; // ⬅️ আগে showReceiptModal সরাসরি খুলত, এখন প্রথমে অ্যাকশন-বেছে-নিন মডাল
