@@ -130,7 +130,6 @@ class PosController extends Controller
                 $initialPaid = min($netAmount, (float) $request->paid_amount);
 
                 $sale = Sale::create([
-                    'invoice_no' => 'INV-' . strtoupper(Str::random(8)),
                     'customer_id' => $request->customer_id,
                     'user_id' => auth()->id(),
                     'gross_amount' => $grossAmount,
@@ -179,6 +178,7 @@ class PosController extends Controller
             ], 422);
         }
     }
+
 
     public function updateSale(Request $request, $id)
     {

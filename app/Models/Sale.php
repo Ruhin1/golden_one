@@ -46,4 +46,12 @@ protected $casts = [
     {
         return $this->hasMany(SaleItem::class);
     }
+
+    protected static function booted()
+    {
+        static::created(function ($sale) {
+            $sale->invoice_no = 'INV-' . $sale->id;
+            $sale->saveQuietly();   // events আবার ট্রিগার হবে না
+        });
+    }
 }
