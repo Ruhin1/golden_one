@@ -122,7 +122,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/getallpaymentserivceprovidersnames', function (){
-        $allPaymentServiceProviderNames = PaymentServiseProviderName::pluck('name');
+        $allPaymentServiceProviderNames = PaymentServiseProviderName::pluck('id', 'name');
         return response()->json($allPaymentServiceProviderNames);
     })->name('get.all.payment.serivce.providers.names');
 });
