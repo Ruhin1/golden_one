@@ -11,7 +11,7 @@ use App\Http\Controllers\SettingController;
 use App\Http\Controllers\CustomerPaymentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
-use App\Models\PaymentServiceProviderName;
+use App\Models\PaymentServiseProviderName;
 
 
 
@@ -122,7 +122,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/getallpaymentserivceprovidersnames', function (){
-        $allPaymentServiceProviderNames = PaymentServiceProviderName::all();
+        $allPaymentServiceProviderNames = PaymentServiseProviderName::all();
         return response()->json($allPaymentServiceProviderNames);
     })->name('get.all.payment.serivce.providers.names');
 });
