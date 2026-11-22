@@ -197,15 +197,28 @@
             </div>
         </div>
 
-        <div class="bill-to-box">
-            <div class="label">বিল প্রাপক</div>
-            @if($sale->customer)
-                <p class="cust-name">{{ $sale->customer->name }}</p>
-                @if($sale->customer->phone)<p>মোবাইল: {{ $sale->customer->phone }}</p>@endif
-                @if($sale->customer->address)<p>{{ $sale->customer->address }}</p>@endif
-            @else
-                <p class="cust-name">ক্যাশ / ওয়াক-ইন কাস্টমার</p>
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:15px; margin-bottom:10px;">
+
+            {{-- বাম পাশ: বিল প্রাপক --}}
+            <div class="bill-to-box" style="flex:1;">
+                <div class="label">বিল প্রাপক</div>
+                @if($sale->customer)
+                    <p class="cust-name">{{ $sale->customer->name }}</p>
+                    @if($sale->customer->phone)<p>মোবাইল: {{ $sale->customer->phone }}</p>@endif
+                    @if($sale->customer->address)<p>{{ $sale->customer->address }}</p>@endif
+                @else
+                    <p class="cust-name">ক্যাশ / ওয়াক-ইন কাস্টমার</p>
+                @endif
+            </div>
+
+            {{-- ডান পাশ: পেমেন্ট সার্ভিস প্রোভাইডার --}}
+            @if($sale->payment_service)
+                <div class="bill-to-box" style="flex:1; text-align:right;">
+                    <div class="label">পেমেন্ট সার্ভিস</div>
+                    <p class="cust-name">{{ $sale->payment_service }}</p>
+                </div>
             @endif
+
         </div>
 
         <table class="items-table">
