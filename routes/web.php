@@ -124,7 +124,7 @@ Route::middleware(['auth'])->prefix('admin')->group(function () {
     Route::get('/getallpaymentserivceprovidersnames', function (){
         $allPaymentServiceProviderNames = PaymentServiseProviderName::pluck('id', 'name');
         return response()->json($allPaymentServiceProviderNames);
-    })->name('get.all.payment.serivce.providers.names');
+    })->name('payment-service-providers.names');
 });
 
 

@@ -198,8 +198,8 @@
 
             <div class="mb-3">
                 <label class="block text-xs font-bold text-gray-600 mb-1">পেমেন্ট সার্বিস সিলেক্ট করুন</label>
-                <div class="border-gray-200 rounded-lg" style="--tw-ring-color:var(--pos-primary)">
-                    Hello
+                <div class="border-gray-200 rounded-lg" style="--tw-ring-color:var(--pos-primary)" id="all-payment-service">
+                    
                 </div>
             </div>
 
@@ -856,6 +856,32 @@
                     });
                 } finally {
                     this.isSubmitting = false;
+                }
+            },
+
+            async getallpaymentserivceprovidersnames() {
+                try{
+
+                    const response = await fetch("{{ route('admin.payment-service-providers.names') }}", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json",
+                            "X-CSRF-TOKEN": this.csrfToken()
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+                    console.log('Payment Service Providers:', result);
+
+                }catch (e) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'সার্ভার এরর!',
+                        text: 'পেমেন্ট সার্ভিস প্রভাইডার নামগুলি প্রাপ্ত করতে ব্যর্থ হয়েছে। ইন্টারনেট সংযোগ পরীক্ষা করুন এবং পুনরায় চেষ্টা করুন।',
+                        confirmButtonColor: '#C6413A'
+                    });
                 }
             },
 
