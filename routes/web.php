@@ -12,9 +12,7 @@ use App\Http\Controllers\CustomerPaymentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -29,6 +27,7 @@ Route::middleware('auth')->group(function () {
 
 // Application Routes for Admin Panel
 Route::get('/', function () {
+    return 1;
     return redirect()->route('pos.index');
 });
 
