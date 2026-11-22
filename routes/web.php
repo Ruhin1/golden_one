@@ -27,7 +27,6 @@ Route::middleware('auth')->group(function () {
 
 // Application Routes for Admin Panel
 Route::get('/', function () {
-    return 1;
     return redirect()->route('pos.index');
 });
 

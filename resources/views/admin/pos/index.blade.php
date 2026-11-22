@@ -196,6 +196,13 @@
                     style="--tw-ring-color:var(--pos-primary)">
             </div>
 
+            <div class="mb-3">
+                <label class="block text-xs font-bold text-gray-600 mb-1">পেমেন্ট সার্বিস সিলেক্ট করুন</label>
+                <div class="border-gray-200 rounded-lg" style="--tw-ring-color:var(--pos-primary)">
+                    Hello
+                </div>
+            </div>
+
             <div class="bg-gray-50/60 rounded-xl border border-gray-100 flex-1 p-2 overflow-y-auto mb-3 max-h-72 lg:max-h-full pos-cart-scroll-area">
                 <table class="w-full text-left border-collapse" x-show="cart.length > 0">
                     <thead>
