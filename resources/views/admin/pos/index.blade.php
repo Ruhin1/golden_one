@@ -860,23 +860,21 @@
             },
 
             async getallpaymentserivceprovidersnames() {
-                try{
-
+                try {
                     const response = await fetch("{{ route('payment-service-providers.names') }}", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
                             "Accept": "application/json",
                             "X-CSRF-TOKEN": this.csrfToken()
-                        },
-                        body: JSON.stringify(payload)
+                        }
                     });
 
                     const result = await response.json();
-                    //fdgfdgdfg
                     console.log('Payment Service Providers:', result);
 
-                }catch (e) {
+                } catch (e) {
+                    console.error(e);   // ← ডিবাগিং সহজ হবে
                     Swal.fire({
                         icon: 'error',
                         title: 'সার্ভার এরর!',
@@ -885,8 +883,6 @@
                     });
                 }
             },
-
-            getallpaymentserivceprovidersnames();
 
             // ================================================================
             // 🖨️ A4 ইনভয়েস প্রিন্ট
